@@ -63,6 +63,9 @@ public class UserService {
     }
 
     private User mapToEntity(final UserDTO userDTO, final User user) {
+        if(userDTO.getId()!=null){
+            user.setId(userDTO.getId());
+        }
         user.setName(userDTO.getName());
         user.setEmail(userDTO.getEmail());
         user.setDepartmentId(userDTO.getDepartmentId());
